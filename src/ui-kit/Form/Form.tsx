@@ -27,7 +27,7 @@ function Form(props: FormProps) {
     <section className="mx-auto max-w-sm p-6 h-dvh flex flex-col">
       <Title>{title}</Title>
       <form onSubmit={onSubmit} className="flex flex-col grow">
-        <div className="grow mb-8">{children}</div>
+        <div className="grow mb-8 flex flex-col gap-3">{children}</div>
         <Button type="submit" disabled={!canSubmit}>
           {submitText}
         </Button>

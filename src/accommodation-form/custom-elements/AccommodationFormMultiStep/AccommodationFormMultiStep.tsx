@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 
+import tailwindCSS from "src/styles/output.css?inline";
 import ReactAccommodationFormMultiStep from "src/accommodation-form/components/AccommodationFormMultiStep";
 
 /**
@@ -14,6 +15,11 @@ class AccommodationFormMultiStep extends HTMLElement {
 
   connectedCallback() {
     const shadow = this.shadowRoot as ShadowRoot;
+
+    // Inject TailwindCSS
+    const style = document.createElement("style");
+    style.textContent = tailwindCSS;
+    shadow.append(style);
 
     // Mount React component
     createRoot(shadow).render(<ReactAccommodationFormMultiStep />);

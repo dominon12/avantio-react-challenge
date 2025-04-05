@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 
-import ReactAccommodationFormMultiStep from "../../components/AccommodationFormMultiStep";
+import ReactAccommodationFormMultiStep from "src/accommodation-form/components/AccommodationFormMultiStep";
 
 /**
  * Custom element based on

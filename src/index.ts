@@ -1,1 +1,1 @@
-import "./accommodation-form/custom-elements/AccommodationFormMultiStep";
+import "src/accommodation-form/custom-elements/AccommodationFormMultiStep";

@@ -1,0 +1,9 @@
+{
+  "name": "avantio-react-challenge",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/dominon12/avantio-react-challenge.git",
+  "author": "Maksim Sobolev <youneedmax@gmail.com>",
+  "license": "MIT",
+  "private": true
+}

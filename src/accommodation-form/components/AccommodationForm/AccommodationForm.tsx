@@ -1,4 +1,5 @@
 import Form from "src/ui-kit/Form";
+import FormField from "src/ui-kit/FormField";
 
 /**
  * Form that collects information
@@ -9,7 +10,9 @@ function AccommodationForm() {
 
   return (
     <Form title="Accommodation" onSubmit={onSubmit}>
-      Accommodation form body
+      <FormField label="Name">
+        {(fieldId) => <input id={fieldId} placeholder="Name" />}
+      </FormField>
     </Form>
   );
 }

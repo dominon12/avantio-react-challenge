@@ -3,6 +3,7 @@ import ImageUpload from "../ImageUpload";
 import Removable from "../Removable";
 
 type ImageUploaderProps = {
+  inputId: string;
   images: { id: string; value: File }[];
   onUpload: (image: File) => void;
   onRemove: (id: string) => void;
@@ -14,7 +15,7 @@ type ImageUploaderProps = {
  * and to preview them.
  */
 function ImageUploader(props: ImageUploaderProps) {
-  const { images, onUpload, onRemove, maxImages } = props;
+  const { inputId, images, onUpload, onRemove, maxImages } = props;
 
   // don't allow to upload more images in case
   // their current amount exceeds `maxImages`
@@ -32,7 +33,7 @@ function ImageUploader(props: ImageUploaderProps) {
         );
       })}
 
-      {canUpload && <ImageUpload onUpload={onUpload} />}
+      {canUpload && <ImageUpload id={inputId} onUpload={onUpload} />}
     </div>
   );
 }

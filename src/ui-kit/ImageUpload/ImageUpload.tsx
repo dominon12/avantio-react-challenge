@@ -1,8 +1,7 @@
 import type { ChangeEventHandler } from "react";
 
-import { imageSize } from "../shared/image-size";
-
 type ImageUploadProps = {
+  id: string;
   onUpload: (image: File) => void;
   validate?: (image: File) => boolean;
 };
@@ -11,7 +10,7 @@ type ImageUploadProps = {
  * Handles image upload process.
  */
 function ImageUpload(props: ImageUploadProps) {
-  const { onUpload, validate } = props;
+  const { id, onUpload, validate } = props;
 
   /**
    * Executes when user changes file selection.
@@ -37,6 +36,7 @@ function ImageUpload(props: ImageUploadProps) {
       </span>
 
       <input
+        id={id}
         type="file"
         accept="image/*"
         className="absolute inset-0 opacity-0 cursor-pointer"

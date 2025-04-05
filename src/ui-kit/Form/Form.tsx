@@ -1,6 +1,7 @@
 import type { FormEventHandler, ReactNode } from "react";
 
 import Title from "../Title";
+import Button from "../Button";
 
 type FormProps = {
   title: string;
@@ -27,9 +28,9 @@ function Form(props: FormProps) {
       <Title>{title}</Title>
       <form onSubmit={onSubmit}>
         <div>{children}</div>
-        <button type="submit" disabled={!canSubmit}>
+        <Button type="submit" disabled={!canSubmit}>
           {submitText}
-        </button>
+        </Button>
       </form>
     </section>
   );

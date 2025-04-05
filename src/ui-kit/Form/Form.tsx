@@ -24,10 +24,10 @@ function Form(props: FormProps) {
   } = props;
 
   return (
-    <section className="mx-auto max-w-sm p-6">
+    <section className="mx-auto max-w-sm p-6 h-dvh flex flex-col">
       <Title>{title}</Title>
-      <form onSubmit={onSubmit}>
-        <div>{children}</div>
+      <form onSubmit={onSubmit} className="flex flex-col grow">
+        <div className="grow mb-8">{children}</div>
         <Button type="submit" disabled={!canSubmit}>
           {submitText}
         </Button>

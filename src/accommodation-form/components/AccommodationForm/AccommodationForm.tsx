@@ -1,25 +1,42 @@
+import { FormProvider, useForm } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form";
+
 import Form from "src/ui-kit/Form";
 import AccommodationNameInput from "../AccommodationNameInput";
 import AccommodationAddressInput from "../AccommodationAddressInput";
 import AccommodationDescriptionTextArea from "../AccommodationDescriptionTextArea";
 import AccommodationTypeSelect from "../AccommodationTypeSelect";
 import AccommodationImageUploader from "../AccommodationImageUploader";
+import type Accommodation from "src/accommodation-form/types/accommodation";
 
 /**
  * Form that collects information
  * about an accommodation.
  */
 function AccommodationForm() {
-  const onSubmit = () => {};
+  const form = useForm<Accommodation>({
+    mode: "onBlur",
+  });
+
+  const onSubmit: SubmitHandler<Accommodation> = (data) => {
+    console.log("submitted data", data);
+  };
 
   return (
-    <Form title="Accommodation" submitText="Next" onSubmit={onSubmit}>
-      <AccommodationNameInput />
-      <AccommodationAddressInput />
-      <AccommodationDescriptionTextArea />
-      <AccommodationTypeSelect />
-      <AccommodationImageUploader />
-    </Form>
+    <FormProvider {...form}>
+      <Form
+        title="Accommodation"
+        submitText="Next"
+        canSubmit={form.formState.isValid}
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
+        <AccommodationNameInput />
+        <AccommodationAddressInput />
+        <AccommodationDescriptionTextArea />
+        <AccommodationTypeSelect />
+        <AccommodationImageUploader />
+      </Form>
+    </FormProvider>
   );
 }
 

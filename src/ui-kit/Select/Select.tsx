@@ -10,7 +10,7 @@ type SelectProps = Omit<BaseSelectProps, "className">;
  * Select component.
  */
 function Select(props: SelectProps) {
-  return <select className={inputBaseClass} {...props} />;
+  return <select className={`${inputBaseClass} capitalize`} {...props} />;
 }
 
 export default Select;

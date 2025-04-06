@@ -6,6 +6,7 @@ import Form from "src/ui-kit/Form";
 import ownerSchema from "../../schema/owner";
 import type Owner from "../../types/owner";
 import NameInput from "../NameInput";
+import EmailInput from "../EmailInput";
 
 /**
  * Owner form.
@@ -29,6 +30,7 @@ function OwnerForm() {
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <NameInput />
+        <EmailInput />
       </Form>
     </FormProvider>
   );

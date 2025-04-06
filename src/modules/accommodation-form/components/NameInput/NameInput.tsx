@@ -14,7 +14,7 @@ function NameInput() {
   } = useFormContext<Accommodation>();
 
   return (
-    <FormField label="Name" error={errors.name?.message}>
+    <FormField label="Name" error={errors.name?.message} isRequired>
       {(fieldId) => (
         <Input id={fieldId} placeholder="Name" {...register("name")} />
       )}

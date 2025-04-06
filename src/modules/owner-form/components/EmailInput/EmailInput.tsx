@@ -12,7 +12,7 @@ function EmailInput() {
   } = useOwnerFormContext();
 
   return (
-    <FormField label="Email" error={errors.email?.message}>
+    <FormField label="Email" error={errors.email?.message} isRequired>
       {(fieldId) => (
         <Input id={fieldId} placeholder="Email" {...register("email")} />
       )}

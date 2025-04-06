@@ -14,7 +14,7 @@ function AddressInput() {
   } = useFormContext<Accommodation>();
 
   return (
-    <FormField label="Address" error={errors.address?.message}>
+    <FormField label="Address" error={errors.address?.message} isRequired>
       {(fieldId) => (
         <Input id={fieldId} placeholder="Address" {...register("address")} />
       )}

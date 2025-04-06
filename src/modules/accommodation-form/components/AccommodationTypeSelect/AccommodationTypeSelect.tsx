@@ -12,7 +12,7 @@ function AccommodationTypeSelect() {
   const { register } = useFormContext<Accommodation>();
 
   return (
-    <FormField label="Type">
+    <FormField label="Type" isRequired>
       {(fieldId) => (
         <Select id={fieldId} {...register("type")}>
           {Object.values(AccommodationType).map((type) => (

@@ -2,10 +2,12 @@ import { useId } from "react";
 import type { ReactNode } from "react";
 
 import Label from "../Label";
+import FieldError from "../FieldError";
 
 type FormFieldProps = {
   label: string;
   children: (inputId: string) => ReactNode;
+  error?: ReactNode;
 };
 
 /**
@@ -13,7 +15,7 @@ type FormFieldProps = {
  * that renders a label.
  */
 function FormField(props: FormFieldProps) {
-  const { label, children } = props;
+  const { label, children, error } = props;
 
   const id = useId();
 
@@ -21,6 +23,7 @@ function FormField(props: FormFieldProps) {
     <div className="flex flex-col gap-1">
       <Label htmlFor={id}>{label}</Label>
       {children(id)}
+      {error && <FieldError>{error}</FieldError>}
     </div>
   );
 }

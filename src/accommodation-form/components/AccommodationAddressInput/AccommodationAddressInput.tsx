@@ -8,10 +8,13 @@ import Input from "src/ui-kit/Input";
  * Accommodation address input.
  */
 function AccommodationAddressInput() {
-  const { register } = useFormContext<Accommodation>();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<Accommodation>();
 
   return (
-    <FormField label="Address">
+    <FormField label="Address" error={errors.address?.message}>
       {(fieldId) => (
         <Input id={fieldId} placeholder="Address" {...register("address")} />
       )}

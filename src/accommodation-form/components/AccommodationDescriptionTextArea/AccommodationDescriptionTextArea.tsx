@@ -8,10 +8,13 @@ import TextArea from "src/ui-kit/TextArea";
  * Accommodation description textarea.
  */
 function AccommodationDescriptionTextArea() {
-  const { register } = useFormContext<Accommodation>();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<Accommodation>();
 
   return (
-    <FormField label="Description">
+    <FormField label="Description" error={errors.description?.message}>
       {(fieldId) => (
         <TextArea
           id={fieldId}

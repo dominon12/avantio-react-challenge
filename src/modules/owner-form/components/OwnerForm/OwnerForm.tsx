@@ -7,6 +7,7 @@ import ownerSchema from "../../schema/owner";
 import type Owner from "../../types/owner";
 import NameInput from "../NameInput";
 import EmailInput from "../EmailInput";
+import PhoneInput from "../PhoneInput";
 
 /**
  * Owner form.
@@ -31,6 +32,7 @@ function OwnerForm() {
       >
         <NameInput />
         <EmailInput />
+        <PhoneInput />
       </Form>
     </FormProvider>
   );

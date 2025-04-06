@@ -3,14 +3,13 @@ import type { ChangeEventHandler } from "react";
 type ImageUploadProps = {
   id: string;
   onUpload: (image: File) => void;
-  validate?: (image: File) => boolean;
 };
 
 /**
  * Handles image upload process.
  */
 function ImageUpload(props: ImageUploadProps) {
-  const { id, onUpload, validate } = props;
+  const { id, onUpload } = props;
 
   /**
    * Executes when user changes file selection.
@@ -19,9 +18,6 @@ function ImageUpload(props: ImageUploadProps) {
     // check if a file was selected
     const file = e.target.files?.[0];
     if (!file) return;
-
-    // validate, if required
-    if (validate && !validate(file)) return;
 
     // call back with upload result
     onUpload(file);

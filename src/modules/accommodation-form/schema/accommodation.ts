@@ -9,15 +9,19 @@ const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
     .min(4)
     .max(128)
     .matches(/^[^0-9]*$/, "Name must not contain numbers")
-    .required(),
-  address: string().min(4).max(128).required(),
+    .required()
+    .label("Name"),
+  address: string().min(4).max(128).required().label("Address"),
   description: lazy((value) => {
     if (value) {
-      return string().min(128).max(2048);
+      return string().min(128).max(2048).label("Description");
     }
     return string().optional();
   }),
-  type: string().oneOf(Object.values(AccommodationType)).required(),
+  type: string()
+    .oneOf(Object.values(AccommodationType))
+    .required()
+    .label("Type"),
   // todo: dimension restrictions of 500x500
   photos: array()
     .of(

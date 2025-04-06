@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 
 import tailwindCSS from "src/styles/output.css?inline";
-import ReactAccommodationFormMultiStep from "src/accommodation-form/components/AccommodationFormMultiStep";
+import ReactAccommodationFormMultiStep from "src/accommodation-form-full/components/AccommodationFormMultiStep";
 
 /**
  * Custom element based on

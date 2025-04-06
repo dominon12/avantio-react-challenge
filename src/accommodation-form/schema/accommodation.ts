@@ -5,8 +5,11 @@ import type Accommodation from "../types/accommodation";
 import AccommodationType from "../types/accommodation-type";
 
 const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
-  // todo: disallow numbers
-  name: string().min(4).max(128).required(),
+  name: string()
+    .min(4)
+    .max(128)
+    .matches(/^[^0-9]*$/, "Name must not contain numbers")
+    .required(),
   address: string().min(4).max(128).required(),
   description: lazy((value) => {
     if (value) {

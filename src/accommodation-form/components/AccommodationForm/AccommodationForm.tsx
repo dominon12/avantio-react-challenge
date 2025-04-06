@@ -1,4 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 
 import Form from "src/ui-kit/Form";
@@ -7,6 +8,7 @@ import AccommodationAddressInput from "../AccommodationAddressInput";
 import AccommodationDescriptionTextArea from "../AccommodationDescriptionTextArea";
 import AccommodationTypeSelect from "../AccommodationTypeSelect";
 import AccommodationImageUploader from "../AccommodationImageUploader";
+import accommodationSchema from "src/accommodation-form/schema/accommodation";
 import type Accommodation from "src/accommodation-form/types/accommodation";
 
 /**
@@ -16,6 +18,7 @@ import type Accommodation from "src/accommodation-form/types/accommodation";
 function AccommodationForm() {
   const form = useForm<Accommodation>({
     mode: "onBlur",
+    resolver: yupResolver(accommodationSchema),
   });
 
   const onSubmit: SubmitHandler<Accommodation> = (data) => {

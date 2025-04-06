@@ -3,11 +3,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 
 import Form from "src/ui-kit/Form";
-import AccommodationNameInput from "../AccommodationNameInput";
-import AccommodationAddressInput from "../AccommodationAddressInput";
-import AccommodationDescriptionTextArea from "../AccommodationDescriptionTextArea";
+import NameInput from "../NameInput";
+import AddressInput from "../AddressInput";
+import DescriptionTextArea from "../DescriptionTextArea";
 import AccommodationTypeSelect from "../AccommodationTypeSelect";
-import AccommodationImageUploader from "../AccommodationImageUploader";
+import ImageUploader from "../ImageUploader";
 import accommodationSchema from "src/accommodation-form/schema/accommodation";
 import type Accommodation from "src/accommodation-form/types/accommodation";
 
@@ -33,11 +33,11 @@ function AccommodationForm() {
         canSubmit={form.formState.isValid}
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <AccommodationNameInput />
-        <AccommodationAddressInput />
-        <AccommodationDescriptionTextArea />
+        <NameInput />
+        <AddressInput />
+        <DescriptionTextArea />
         <AccommodationTypeSelect />
-        <AccommodationImageUploader />
+        <ImageUploader />
       </Form>
     </FormProvider>
   );

@@ -1,13 +1,13 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 
 import FormField from "src/ui-kit/FormField";
-import ImageUploader from "src/ui-kit/ImageUploader";
+import UIKitImageUploader from "src/ui-kit/ImageUploader";
 import type Accommodation from "src/accommodation-form/types/accommodation";
 
 /**
  * Accommodation image uploader.
  */
-function AccommodationImageUploader() {
+function ImageUploader() {
   const { control } = useFormContext<Accommodation>();
   const { fields, append, remove } = useFieldArray({ control, name: "photos" });
 
@@ -16,7 +16,7 @@ function AccommodationImageUploader() {
   return (
     <FormField label="Photos">
       {(fieldId) => (
-        <ImageUploader
+        <UIKitImageUploader
           inputId={fieldId}
           images={fields}
           onUpload={onImageUpload}
@@ -28,4 +28,4 @@ function AccommodationImageUploader() {
   );
 }
 
-export default AccommodationImageUploader;
+export default ImageUploader;

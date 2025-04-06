@@ -7,7 +7,7 @@ import Input from "src/ui-kit/Input";
 /**
  * Accommodation name input.
  */
-function AccommodationNameInput() {
+function NameInput() {
   const {
     register,
     formState: { errors },
@@ -22,4 +22,4 @@ function AccommodationNameInput() {
   );
 }
 
-export default AccommodationNameInput;
+export default NameInput;

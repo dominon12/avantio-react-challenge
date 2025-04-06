@@ -7,7 +7,7 @@ import TextArea from "src/ui-kit/TextArea";
 /**
  * Accommodation description textarea.
  */
-function AccommodationDescriptionTextArea() {
+function DescriptionTextArea() {
   const {
     register,
     formState: { errors },
@@ -26,4 +26,4 @@ function AccommodationDescriptionTextArea() {
   );
 }
 
-export default AccommodationDescriptionTextArea;
+export default DescriptionTextArea;

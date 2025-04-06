@@ -7,7 +7,7 @@ import Input from "src/ui-kit/Input";
 /**
  * Accommodation address input.
  */
-function AccommodationAddressInput() {
+function AddressInput() {
   const {
     register,
     formState: { errors },
@@ -22,4 +22,4 @@ function AccommodationAddressInput() {
   );
 }
 
-export default AccommodationAddressInput;
+export default AddressInput;

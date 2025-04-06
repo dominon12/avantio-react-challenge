@@ -1,6 +1,4 @@
-import { useFormContext } from "react-hook-form";
-
-import type Accommodation from "src/modules/accommodation-form/types/accommodation";
+import useAccommodationFormContext from "src/modules/accommodation-form/hooks/useAccommodationFormContext";
 import FormField from "src/ui-kit/FormField";
 import TextArea from "src/ui-kit/TextArea";
 
@@ -11,7 +9,7 @@ function DescriptionTextArea() {
   const {
     register,
     formState: { errors },
-  } = useFormContext<Accommodation>();
+  } = useAccommodationFormContext();
 
   return (
     <FormField label="Description" error={errors.description?.message}>

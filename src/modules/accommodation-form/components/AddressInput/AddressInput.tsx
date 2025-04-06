@@ -1,6 +1,4 @@
-import { useFormContext } from "react-hook-form";
-
-import type Accommodation from "src/modules/accommodation-form/types/accommodation";
+import useAccommodationFormContext from "src/modules/accommodation-form/hooks/useAccommodationFormContext";
 import FormField from "src/ui-kit/FormField";
 import Input from "src/ui-kit/Input";
 
@@ -11,7 +9,7 @@ function AddressInput() {
   const {
     register,
     formState: { errors },
-  } = useFormContext<Accommodation>();
+  } = useAccommodationFormContext();
 
   return (
     <FormField label="Address" error={errors.address?.message} isRequired>

@@ -1,6 +1,4 @@
-import { useFormContext } from "react-hook-form";
-
-import type Accommodation from "src/modules/accommodation-form/types/accommodation";
+import useAccommodationFormContext from "src/modules/accommodation-form/hooks/useAccommodationFormContext";
 import AccommodationType from "src/modules/accommodation-form/types/accommodation-type";
 import FormField from "src/ui-kit/FormField";
 import Select from "src/ui-kit/Select";
@@ -9,7 +7,7 @@ import Select from "src/ui-kit/Select";
  * Accommodation type select.
  */
 function AccommodationTypeSelect() {
-  const { register } = useFormContext<Accommodation>();
+  const { register } = useAccommodationFormContext();
 
   return (
     <FormField label="Type" isRequired>

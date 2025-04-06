@@ -2,7 +2,7 @@ import { useFieldArray, useFormContext } from "react-hook-form";
 
 import FormField from "src/ui-kit/FormField";
 import UIKitImageUploader from "src/ui-kit/ImageUploader";
-import type Accommodation from "src/accommodation-form/types/accommodation";
+import type Accommodation from "src/modules/accommodation-form/types/accommodation";
 
 /**
  * Accommodation image uploader.

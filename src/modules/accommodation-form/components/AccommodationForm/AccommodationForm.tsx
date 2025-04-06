@@ -8,8 +8,8 @@ import AddressInput from "../AddressInput";
 import DescriptionTextArea from "../DescriptionTextArea";
 import AccommodationTypeSelect from "../AccommodationTypeSelect";
 import ImageUploader from "../ImageUploader";
-import accommodationSchema from "src/accommodation-form/schema/accommodation";
-import type Accommodation from "src/accommodation-form/types/accommodation";
+import accommodationSchema from "src/modules/accommodation-form/schema/accommodation";
+import type Accommodation from "src/modules/accommodation-form/types/accommodation";
 
 /**
  * Form that collects information

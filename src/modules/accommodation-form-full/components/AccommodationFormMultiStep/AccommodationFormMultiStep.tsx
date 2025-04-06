@@ -1,4 +1,4 @@
-import AccommodationForm from "src/accommodation-form/components/AccommodationForm";
+import AccommodationForm from "src/modules/accommodation-form/components/AccommodationForm";
 
 /**
  * Multi-Step Accommodation Creation Form.

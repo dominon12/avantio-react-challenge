@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-import type Accommodation from "src/accommodation-form/types/accommodation";
+import type Accommodation from "src/modules/accommodation-form/types/accommodation";
 import FormField from "src/ui-kit/FormField";
 import Input from "src/ui-kit/Input";
 

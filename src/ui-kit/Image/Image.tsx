@@ -2,7 +2,8 @@ import type { ComponentPropsWithoutRef } from "react";
 
 type BaseImageProps = ComponentPropsWithoutRef<"img">;
 
-type ImageProps = Omit<BaseImageProps, "className">;
+type ImageProps = Omit<BaseImageProps, "className"> &
+  Required<Pick<BaseImageProps, "src" | "alt">>;
 
 /**
  * Image preview.

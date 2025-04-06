@@ -1,31 +1,26 @@
-import { useState } from "react";
+import { useFieldArray, useFormContext } from "react-hook-form";
 
 import FormField from "src/ui-kit/FormField";
 import ImageUploader from "src/ui-kit/ImageUploader";
+import type Accommodation from "src/accommodation-form/types/accommodation";
 
 /**
  * Accommodation image uploader.
  */
 function AccommodationImageUploader() {
-  const [images, setImages] = useState<{ id: string; value: File }[]>([]);
+  const { control } = useFormContext<Accommodation>();
+  const { fields, append, remove } = useFieldArray({ control, name: "photos" });
 
-  const onImageUpload = (image: File) => {
-    const newId = `id-${Math.random().toString(36)}-${Date.now()}`;
-    setImages((prev) => prev.concat({ id: newId, value: image }));
-  };
-
-  const onImageRemove = (id: string) => {
-    setImages((prev) => prev.filter((image) => image.id !== id));
-  };
+  const onImageUpload = (file: File) => append({ file });
 
   return (
     <FormField label="Photos">
       {(fieldId) => (
         <ImageUploader
           inputId={fieldId}
-          images={images}
+          images={fields}
           onUpload={onImageUpload}
-          onRemove={onImageRemove}
+          onRemove={remove}
           maxImages={2}
         />
       )}

@@ -22,7 +22,6 @@ const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
   photos: array()
     .of(
       object().shape({
-        id: string().required(),
         file: mixed<File>().required(),
       })
     )

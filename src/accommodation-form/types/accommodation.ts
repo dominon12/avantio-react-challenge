@@ -5,7 +5,7 @@ type Accommodation = {
   address: string;
   description?: string;
   type: AccommodationType;
-  photos?: { id: string; file: File }[];
+  photos?: { file: File }[];
 };
 
 export default Accommodation;

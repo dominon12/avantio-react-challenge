@@ -4,9 +4,9 @@ import Removable from "../Removable";
 
 type ImageUploaderProps = {
   inputId: string;
-  images: { id: string; value: File }[];
+  images: { id: string; file: File }[];
   onUpload: (image: File) => void;
-  onRemove: (id: string) => void;
+  onRemove: (index: number) => void;
   maxImages?: number;
 };
 
@@ -24,10 +24,10 @@ function ImageUploader(props: ImageUploaderProps) {
 
   return (
     <div className="flex gap-4">
-      {images.map((image) => {
-        const imageUrl = URL.createObjectURL(image.value);
+      {images.map((image, index) => {
+        const imageUrl = URL.createObjectURL(image.file);
         return (
-          <Removable key={image.id} onRemove={() => onRemove(image.id)}>
+          <Removable key={image.id} onRemove={() => onRemove(index)}>
             <Image src={imageUrl} />
           </Removable>
         );

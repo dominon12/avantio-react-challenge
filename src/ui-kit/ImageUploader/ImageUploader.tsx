@@ -28,7 +28,7 @@ function ImageUploader(props: ImageUploaderProps) {
         const imageUrl = URL.createObjectURL(image.file);
         return (
           <Removable key={image.id} onRemove={() => onRemove(index)}>
-            <Image src={imageUrl} />
+            <Image src={imageUrl} alt={`Uploaded image ${index + 1}`} />
           </Removable>
         );
       })}

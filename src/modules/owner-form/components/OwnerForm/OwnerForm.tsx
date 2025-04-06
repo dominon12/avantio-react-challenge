@@ -5,6 +5,7 @@ import type { SubmitHandler } from "react-hook-form";
 import Form from "src/ui-kit/Form";
 import ownerSchema from "../../schema/owner";
 import type Owner from "../../types/owner";
+import NameInput from "../NameInput";
 
 /**
  * Owner form.
@@ -27,6 +28,7 @@ function OwnerForm() {
         canSubmit={form.formState.isValid}
         onSubmit={form.handleSubmit(onSubmit)}
       >
+        <NameInput />
       </Form>
     </FormProvider>
   );

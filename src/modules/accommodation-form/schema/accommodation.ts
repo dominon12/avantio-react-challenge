@@ -3,6 +3,7 @@ import type { ObjectSchema } from "yup";
 
 import type Accommodation from "../types/accommodation";
 import AccommodationType from "../types/accommodation-type";
+import validateImageDimensions from "src/utils/validate-image-dimensions";
 
 const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
   name: string()
@@ -22,11 +23,20 @@ const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
     .oneOf(Object.values(AccommodationType))
     .required()
     .label("Type"),
-  // todo: dimension restrictions of 500x500
   photos: array()
     .of(
       object().shape({
-        file: mixed<File>().required(),
+        file: mixed<File>()
+          .test("dimensions", "Image must be 500x500px or smaller", (file) => {
+            if (!file) return true;
+
+            return validateImageDimensions({
+              image: file,
+              maxWidth: 500,
+              maxHeight: 500,
+            });
+          })
+          .required(),
       })
     )
     .max(2)

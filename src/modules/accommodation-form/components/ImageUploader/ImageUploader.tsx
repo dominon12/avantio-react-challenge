@@ -8,13 +8,29 @@ import type Accommodation from "src/modules/accommodation-form/types/accommodati
  * Accommodation image uploader.
  */
 function ImageUploader() {
-  const { control } = useFormContext<Accommodation>();
+  const {
+    control,
+    formState: { errors },
+    trigger,
+  } = useFormContext<Accommodation>();
   const { fields, append, remove } = useFieldArray({ control, name: "photos" });
 
-  const onImageUpload = (file: File) => append({ file });
+  const onImageUpload = (file: File) => {
+    // append new file
+    append({ file });
+
+    // trigger validation
+    const newFieldIndex = fields.length;
+    trigger(`photos.${newFieldIndex}`);
+  };
+
+  // render error messages in the format: "{index + 1}: {message}"
+  const errorMessage = (errors.photos ?? [])
+    .map?.((error, index) => `${index + 1}: ${error?.file?.message}`)
+    .join(", ");
 
   return (
-    <FormField label="Photos">
+    <FormField label="Photos" error={errorMessage}>
       {(fieldId) => (
         <UIKitImageUploader
           inputId={fieldId}

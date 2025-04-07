@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import AccommodationFormSummary from "src/modules/accommodation-form-summary/components/AccommodationFormSummary";
+import FormSummary from "src/modules/form-summary/components/FormSummary";
 import FormStep from "../../types/form-step";
 import AccommodationForm from "src/modules/accommodation-form/components/AccommodationForm";
 import OwnerForm from "src/modules/owner-form/components/OwnerForm";
@@ -10,7 +10,7 @@ import useAccommodationFormContext from "../../context/selector";
 const steps: Record<FormStep, FC> = {
   [FormStep.Accommodation]: AccommodationForm,
   [FormStep.Owner]: OwnerForm,
-  [FormStep.Summary]: AccommodationFormSummary,
+  [FormStep.Summary]: FormSummary,
   [FormStep.Confirmation]: () => <>confirmation</>,
 };
 

@@ -6,6 +6,7 @@ import AccommodationForm from "src/modules/accommodation-form/components/Accommo
 import OwnerForm from "src/modules/owner-form/components/OwnerForm";
 import useAccommodationFormContext from "../../context/selector";
 import Confirmation from "src/modules/submission-confirmation/components/Confirmation";
+import Layout from "../Layout";
 
 // steps matched to components to render
 const steps: Record<FormStep, FC> = {
@@ -25,7 +26,11 @@ function AccommodationFormMultiStep() {
 
   const StepComponent = steps[step];
 
-  return <StepComponent />;
+  return (
+    <Layout>
+      <StepComponent />
+    </Layout>
+  );
 }
 
 export default AccommodationFormMultiStep;

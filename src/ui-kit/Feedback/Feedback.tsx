@@ -20,9 +20,13 @@ function Feedback(props: FeedbackProps) {
 
   const color = kindColorMap[kind];
 
+  /** tailwind classes to include */
+  // bg-red-50 text-red-700 text-red-800
+  // bg-green-50 text-green-700 text-green-800
+
   return (
     <section
-      className={`flex flex-col items-center justify-center text-center p-6 border rounded-2xl shadow-md bg-green-50 text-${color}-700`}
+      className={`flex flex-col h-full items-center justify-center text-center p-4 bg-${color}-50 text-${color}-700`}
     >
       <Title>{title}</Title>
       <p className={`mt-1 text-sm text-${color}-800`}>{message}</p>

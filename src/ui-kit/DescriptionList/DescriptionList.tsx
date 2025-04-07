@@ -25,7 +25,7 @@ function DescriptionList(props: DescriptionListProps) {
             <dt>
               <strong>{name}</strong>{" "}
             </dt>
-            <dd className="mb-2">{value}</dd>
+            <dd className="mb-2 break-words">{value}</dd>
           </Fragment>
         ))}
       </dl>

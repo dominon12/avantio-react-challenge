@@ -12,6 +12,7 @@ import accommodationSchema from "src/modules/accommodation-form/schema/accommoda
 import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
 import ActionType from "src/modules/accommodation-form-full/store/action-type";
 import type Accommodation from "src/modules/accommodation-form/types/accommodation";
+import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
 
 /**
  * Form that collects information
@@ -31,18 +32,20 @@ function AccommodationForm() {
 
   return (
     <FormProvider {...form}>
-      <Form
-        title="Accommodation"
-        submitText="Next"
-        canSubmit={form.formState.isValid}
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
-        <NameInput />
-        <AddressInput />
-        <DescriptionTextArea />
-        <AccommodationTypeSelect />
-        <ImageUploader />
-      </Form>
+      <WithAnimatedAppearance>
+        <Form
+          title="Accommodation"
+          submitText="Next"
+          canSubmit={form.formState.isValid}
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
+          <NameInput />
+          <AddressInput />
+          <DescriptionTextArea />
+          <AccommodationTypeSelect />
+          <ImageUploader />
+        </Form>
+      </WithAnimatedAppearance>
     </FormProvider>
   );
 }

@@ -10,6 +10,7 @@ import EmailInput from "../EmailInput";
 import PhoneInput from "../PhoneInput";
 import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
 import ActionType from "src/modules/accommodation-form-full/store/action-type";
+import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
 
 /**
  * Owner form.
@@ -28,16 +29,18 @@ function OwnerForm() {
 
   return (
     <FormProvider {...form}>
-      <Form
-        title="Owner"
-        submitText="Next"
-        canSubmit={form.formState.isValid}
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
-        <NameInput />
-        <EmailInput />
-        <PhoneInput />
-      </Form>
+      <WithAnimatedAppearance>
+        <Form
+          title="Owner"
+          submitText="Next"
+          canSubmit={form.formState.isValid}
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
+          <NameInput />
+          <EmailInput />
+          <PhoneInput />
+        </Form>
+      </WithAnimatedAppearance>
     </FormProvider>
   );
 }

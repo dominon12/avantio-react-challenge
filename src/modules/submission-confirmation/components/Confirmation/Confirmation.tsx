@@ -1,7 +1,15 @@
+import type { FC } from "react";
+
 import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
 import SubmissionResult from "src/modules/submission-confirmation/types/submission-result";
 import Success from "../Success";
 import Error from "../Error";
+import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
+
+const componentResultMap: Record<SubmissionResult, FC> = {
+  [SubmissionResult.Success]: Success,
+  [SubmissionResult.Error]: Error,
+};
 
 /**
  * Shows submission confirmation
@@ -12,13 +20,13 @@ function Confirmation() {
     state: { result = SubmissionResult.Error },
   } = useAccommodationFormContext();
 
-  switch (result) {
-    case SubmissionResult.Success:
-      return <Success />;
-    case SubmissionResult.Error:
-    default:
-      return <Error />;
-  }
+  const FeedbackComponent = componentResultMap[result];
+
+  return (
+    <WithAnimatedAppearance>
+      <FeedbackComponent />
+    </WithAnimatedAppearance>
+  );
 }
 
 export default Confirmation;

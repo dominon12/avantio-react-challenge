@@ -9,6 +9,7 @@ import ActionType from "src/modules/accommodation-form-full/store/action-type";
 import randomChoice from "src/utils/random-choice";
 import SubmissionResult from "src/modules/submission-confirmation/types/submission-result";
 import createAccommodationFormSubmitEvent from "src/modules/form-summary/events/accommodation-form-submit";
+import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
 
 /**
  * Summary of the accommodation
@@ -44,13 +45,15 @@ function FormSummary() {
   };
 
   return (
-    <Form ref={formRef} title="Summary" onSubmit={onSubmit}>
-      {state.accommodation && (
-        <AccommodationData accommodation={state.accommodation} />
-      )}
+    <WithAnimatedAppearance>
+      <Form ref={formRef} title="Summary" onSubmit={onSubmit}>
+        {state.accommodation && (
+          <AccommodationData accommodation={state.accommodation} />
+        )}
 
-      {state.owner && <OwnerData owner={state.owner} />}
-    </Form>
+        {state.owner && <OwnerData owner={state.owner} />}
+      </Form>
+    </WithAnimatedAppearance>
   );
 }
 

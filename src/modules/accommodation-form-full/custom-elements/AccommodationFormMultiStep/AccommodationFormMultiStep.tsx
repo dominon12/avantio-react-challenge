@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 
 import tailwindCSS from "src/styles/output.css?inline";
-import ReactAccommodationFormMultiStep from "src/modules/accommodation-form-full/components/AccommodationFormMultiStep";
+import MultiStepFormWithContext from "src/modules/accommodation-form-full/components/MultiStepFormWithContext";
 
 /**
  * Custom element based on
@@ -22,7 +22,7 @@ class AccommodationFormMultiStep extends HTMLElement {
     shadow.append(style);
 
     // Mount React component
-    createRoot(shadow).render(<ReactAccommodationFormMultiStep />);
+    createRoot(shadow).render(<MultiStepFormWithContext />);
   }
 }
 

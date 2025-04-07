@@ -8,18 +8,22 @@ import type Owner from "../../types/owner";
 import NameInput from "../NameInput";
 import EmailInput from "../EmailInput";
 import PhoneInput from "../PhoneInput";
+import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
+import ActionType from "src/modules/accommodation-form-full/store/action-type";
 
 /**
  * Owner form.
  */
 function OwnerForm() {
+  const { dispatch } = useAccommodationFormContext();
+
   const form = useForm<Owner>({
     mode: "onBlur",
     resolver: yupResolver(ownerSchema),
   });
 
-  const onSubmit: SubmitHandler<Owner> = (data) => {
-    console.log("submitted data", data);
+  const onSubmit: SubmitHandler<Owner> = (payload) => {
+    dispatch({ type: ActionType.OwnerFormSubmitted, payload });
   };
 
   return (

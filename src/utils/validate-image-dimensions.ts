@@ -8,7 +8,7 @@ type ImageDimensionsValidatorParams = {
  * Validates image dimensions.
  */
 async function validateImageDimensions(
-  params: ImageDimensionsValidatorParams
+  params: ImageDimensionsValidatorParams,
 ): Promise<boolean> {
   const { image, maxWidth, maxHeight } = params;
 

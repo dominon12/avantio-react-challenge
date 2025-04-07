@@ -37,7 +37,7 @@ const accommodationSchema: ObjectSchema<Accommodation> = object().shape({
             });
           })
           .required(),
-      })
+      }),
     )
     .max(2)
     .optional(),

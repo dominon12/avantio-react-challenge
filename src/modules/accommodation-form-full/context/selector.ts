@@ -11,7 +11,7 @@ function useAccommodationFormContext(): ContextValue {
 
   if (!context) {
     throw new Error(
-      "`useAccommodationFormContext` must be used within an `AccommodationFormContextProvider`"
+      "`useAccommodationFormContext` must be used within an `AccommodationFormContextProvider`",
     );
   }
 

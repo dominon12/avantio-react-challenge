@@ -13,7 +13,7 @@ function useContextBusiness(): ContextValue {
 
   const value: ContextValue = useMemo(
     () => ({ state, dispatch }),
-    [state, dispatch]
+    [state, dispatch],
   );
 
   return value;

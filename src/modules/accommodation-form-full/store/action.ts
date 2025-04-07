@@ -1,6 +1,7 @@
 import ActionType from "./action-type";
 import type Accommodation from "src/modules/accommodation-form/types/accommodation";
 import type Owner from "src/modules/owner-form/types/owner";
+import SubmissionResult from "src/modules/submission-confirmation/types/submission-result";
 
 // map action types to payloads
 // so reducer infers payload type
@@ -9,7 +10,7 @@ type ActionPayloadMap = {
   [ActionType.AccommodationFormSubmitted]: Accommodation;
   [ActionType.OwnerFormSubmitted]: Owner;
   [ActionType.FormSummaryAccepted]: {
-    result: "success" | "error";
+    result: SubmissionResult;
   };
 };
 

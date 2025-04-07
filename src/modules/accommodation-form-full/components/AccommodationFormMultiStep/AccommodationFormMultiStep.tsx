@@ -1,10 +1,10 @@
-import OwnerForm from "src/modules/owner-form/components/OwnerForm";
+import AccommodationFormSummary from "src/modules/accommodation-form-summary/components/AccommodationFormSummary";
 
 /**
  * Multi-Step Accommodation Creation Form.
  */
 function AccommodationFormMultiStep() {
-  return <OwnerForm />;
+  return <AccommodationFormSummary />;
 }
 
 export default AccommodationFormMultiStep;

@@ -6,7 +6,7 @@ import SubmissionResult from "src/modules/submission-confirmation/types/submissi
 type StoreState = {
   step: FormStep;
   accommodation?: Accommodation;
-  owner?: Owner;
+  owner?: Partial<Owner>;
   result?: SubmissionResult;
 };
 

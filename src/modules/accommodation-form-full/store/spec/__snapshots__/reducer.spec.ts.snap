@@ -1,5 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Accommodation form reducer > goes back to the \`Accommodation\` step 1`] = `
+{
+  "owner": {
+    "email": "test@email.com",
+    "name": "Test Owner",
+  },
+  "step": "accommodation",
+}
+`;
+
 exports[`Accommodation form reducer > resets the state correctly 1`] = `
 {
   "step": "accommodation",

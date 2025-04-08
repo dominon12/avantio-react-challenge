@@ -9,14 +9,15 @@ const kindColorMap: Record<FeedbackKind, string> = {
   error: "red",
 };
 
-type FeedbackProps = {
+export type FeedbackProps = {
   title: ReactNode;
   message: ReactNode;
   kind: FeedbackKind;
+  action?: ReactNode;
 };
 
 function Feedback(props: FeedbackProps) {
-  const { title, message, kind } = props;
+  const { title, message, kind, action } = props;
 
   const color = kindColorMap[kind];
 
@@ -30,7 +31,8 @@ function Feedback(props: FeedbackProps) {
       data-testid="feedback"
     >
       <Title>{title}</Title>
-      <p className={`mt-1 text-sm text-${color}-800`}>{message}</p>
+      <p className={`mt-1 mb-4 text-sm text-${color}-800`}>{message}</p>
+      {action}
     </section>
   );
 }

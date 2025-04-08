@@ -10,6 +10,9 @@ export default defineConfig({
       src: path.resolve(__dirname, "src"),
     },
   },
+  test: {
+    exclude: ["node_modules", "**/e2e/**"],
+  },
   build: {
     target: "esnext",
     outDir: "dist",

@@ -9,7 +9,7 @@ const kindColorMap: Record<FeedbackKind, string> = {
   error: "red",
 };
 
-export type FeedbackProps = {
+type FeedbackProps = {
   title: ReactNode;
   message: ReactNode;
   kind: FeedbackKind;

@@ -1,21 +1,28 @@
+import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
+import ActionType from "src/modules/accommodation-form-full/store/action-type";
+import Button from "src/ui-kit/Button";
 import Feedback from "src/ui-kit/Feedback";
-import type { FeedbackProps } from "src/ui-kit/Feedback/Feedback";
-
-type ErrorProps = Required<Pick<FeedbackProps, "action">>;
 
 /**
  * Error form submission
  * confirmation.
  */
-function Error(props: ErrorProps) {
-  const { action } = props;
+function Error() {
+  const { dispatch } = useAccommodationFormContext();
+
+  /**
+   * Goes back to the summary step
+   * so that the user could try
+   * submitting the form again.
+   */
+  const onBack = () => dispatch({ type: ActionType.BackToSummary });
 
   return (
     <Feedback
       title="Error!"
       message="Couldn't submit the form. Please try again later."
       kind="error"
-      action={action}
+      action={<Button onClick={onBack}>Go Back</Button>}
     />
   );
 }

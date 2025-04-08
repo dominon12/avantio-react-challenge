@@ -23,6 +23,15 @@ function OwnerForm() {
     resolver: yupResolver(ownerSchema),
   });
 
+  /**
+   * Navigates back to the previous step,
+   * while saving current progress.
+   */
+  const onBack = () => {
+    const owner = form.getValues();
+    dispatch({ type: ActionType.BackToAccommodation, payload: owner });
+  };
+
   const onSubmit: SubmitHandler<Owner> = (payload) => {
     dispatch({ type: ActionType.OwnerFormSubmitted, payload });
   };
@@ -33,6 +42,7 @@ function OwnerForm() {
         <FormStep
           title="Owner"
           submitText="Next"
+          onBack={onBack}
           canSubmit={form.formState.isValid}
           onSubmit={form.handleSubmit(onSubmit)}
         >

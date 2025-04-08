@@ -24,6 +24,12 @@ function reducer(state: StoreState, action: Action): StoreState {
         step: FormStep.Confirmation,
         result: action.payload.result,
       };
+    case ActionType.BackToAccommodation:
+      return {
+        ...state,
+        step: FormStep.Accommodation,
+        owner: action.payload,
+      };
     case ActionType.ResetForm:
       return initialState;
     default:

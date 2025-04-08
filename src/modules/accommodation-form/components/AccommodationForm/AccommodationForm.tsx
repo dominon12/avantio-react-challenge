@@ -19,10 +19,14 @@ import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
  * about an accommodation.
  */
 function AccommodationForm() {
-  const { dispatch } = useAccommodationFormContext();
+  const {
+    state: { accommodation },
+    dispatch,
+  } = useAccommodationFormContext();
 
   const form = useForm<Accommodation>({
     mode: "onBlur",
+    defaultValues: accommodation,
     resolver: yupResolver(accommodationSchema),
   });
 

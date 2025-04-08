@@ -10,6 +10,7 @@ import randomChoice from "src/utils/random-choice";
 import SubmissionResult from "src/modules/submission-confirmation/types/submission-result";
 import createAccommodationFormSubmitEvent from "src/modules/form-summary/events/accommodation-form-submit";
 import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
+import type Owner from "src/modules/owner-form/types/owner";
 
 /**
  * Summary of the accommodation
@@ -18,6 +19,11 @@ import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
 function FormSummary() {
   const { state, dispatch } = useAccommodationFormContext();
   const formRef = useRef<HTMLFormElement>(null);
+
+  /**
+   * Navigates to the previous form step.
+   */
+  const onBack = () => dispatch({ type: ActionType.BackToOwner });
 
   /**
    * Handles final form submission.
@@ -30,7 +36,8 @@ function FormSummary() {
       const formSubmitEvent = createAccommodationFormSubmitEvent({
         detail: {
           accommodation: state.accommodation,
-          owner: state.owner,
+          // owner can't be partial on this step
+          owner: state.owner as Owner,
         },
       });
 
@@ -46,12 +53,17 @@ function FormSummary() {
 
   return (
     <WithAnimatedAppearance>
-      <FormStep ref={formRef} title="Summary" onSubmit={onSubmit}>
+      <FormStep
+        ref={formRef}
+        title="Summary"
+        onBack={onBack}
+        onSubmit={onSubmit}
+      >
         {state.accommodation && (
           <AccommodationData accommodation={state.accommodation} />
         )}
 
-        {state.owner && <OwnerData owner={state.owner} />}
+        {state.owner && <OwnerData owner={state.owner as Owner} />}
       </FormStep>
     </WithAnimatedAppearance>
   );

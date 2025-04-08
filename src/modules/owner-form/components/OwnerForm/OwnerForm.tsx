@@ -16,10 +16,14 @@ import WithAnimatedAppearance from "src/ui-kit/WithAnimatedAppearance";
  * Owner form.
  */
 function OwnerForm() {
-  const { dispatch } = useAccommodationFormContext();
+  const {
+    state: { owner },
+    dispatch,
+  } = useAccommodationFormContext();
 
   const form = useForm<Owner>({
     mode: "onBlur",
+    defaultValues: owner,
     resolver: yupResolver(ownerSchema),
   });
 

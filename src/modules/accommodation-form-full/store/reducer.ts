@@ -30,6 +30,11 @@ function reducer(state: StoreState, action: Action): StoreState {
         step: FormStep.Accommodation,
         owner: action.payload,
       };
+    case ActionType.BackToOwner:
+      return {
+        ...state,
+        step: FormStep.Owner,
+      };
     case ActionType.ResetForm:
       return initialState;
     default:

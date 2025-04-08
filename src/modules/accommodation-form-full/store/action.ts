@@ -13,6 +13,7 @@ type ActionPayloadMap = {
     result: SubmissionResult;
   };
   [ActionType.BackToAccommodation]: Partial<Owner>;
+  [ActionType.BackToOwner]: void;
   [ActionType.ResetForm]: void;
 };
 

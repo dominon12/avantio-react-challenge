@@ -3,6 +3,7 @@ enum ActionType {
   OwnerFormSubmitted = "OwnerFormSubmitted",
   FormSummaryAccepted = "FormSummaryAccepted",
   BackToAccommodation = "BackToAccommodation",
+  BackToOwner = "BackToOwner",
   ResetForm = "ResetForm",
 }
 

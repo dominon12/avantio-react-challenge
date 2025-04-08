@@ -29,6 +29,15 @@ yarn install
 yarn dev
 ```
 
+### Lint & Prettify & Test
+
+```bash
+yarn lint
+yarn prettier
+yarn test:unit
+yarn test:e2e
+```
+
 ### Build for Production
 
 ```bash

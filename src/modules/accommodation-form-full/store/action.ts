@@ -12,6 +12,7 @@ type ActionPayloadMap = {
   [ActionType.FormSummaryAccepted]: {
     result: SubmissionResult;
   };
+  [ActionType.ResetForm]: void;
 };
 
 // create `Action` type

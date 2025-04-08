@@ -1,6 +1,7 @@
 import FormStep from "../types/form-step";
 import Action from "./action";
 import ActionType from "./action-type";
+import initialState from "./initial-state";
 import StoreState from "./state-type";
 
 function reducer(state: StoreState, action: Action): StoreState {
@@ -23,6 +24,8 @@ function reducer(state: StoreState, action: Action): StoreState {
         step: FormStep.Confirmation,
         result: action.payload.result,
       };
+    case ActionType.ResetForm:
+      return initialState;
     default:
       return state;
   }

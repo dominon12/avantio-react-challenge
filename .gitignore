@@ -131,3 +131,9 @@ dist
 
 # tailwind css output
 src/styles/output.css
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

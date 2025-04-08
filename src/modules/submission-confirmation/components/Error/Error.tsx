@@ -1,5 +1,5 @@
 import Feedback from "src/ui-kit/Feedback";
-import { FeedbackProps } from "src/ui-kit/Feedback/Feedback";
+import type { FeedbackProps } from "src/ui-kit/Feedback/Feedback";
 
 type ErrorProps = Required<Pick<FeedbackProps, "action">>;
 

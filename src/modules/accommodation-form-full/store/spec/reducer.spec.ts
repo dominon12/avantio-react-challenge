@@ -93,4 +93,29 @@ describe("Accommodation form reducer", () => {
     // match snapshot
     expect(result).toMatchSnapshot();
   });
+
+  it("resets the state correctly", () => {
+    // initialize with some data
+    const initialStateWithData = {
+      ...initialState,
+      step: FormStep.Summary,
+      accommodation: mockAccommodation,
+      owner: mockOwner,
+      result: SubmissionResult.Error,
+    };
+
+    // prepare action
+    const action: Action = {
+      type: ActionType.ResetForm,
+    };
+
+    // call reducer
+    const result = reducer(initialStateWithData, action);
+
+    // check result
+    expect(result).toEqual(initialState);
+
+    // match snapshot
+    expect(result).toMatchSnapshot();
+  });
 });

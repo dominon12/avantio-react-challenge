@@ -22,7 +22,7 @@ function WithAnimatedAppearance(props: WithAnimatedAppearanceProps) {
 
   return (
     <div
-      className={`transition-all duration-500 ease-out transform h-full ${
+      className={`h-full transform transition-all duration-500 ease-out ${
         show ? "opacity-100" : "opacity-0"
       }`}
     >

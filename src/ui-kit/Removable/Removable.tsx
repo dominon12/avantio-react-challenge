@@ -13,11 +13,11 @@ function Removable(props: RemovableProps) {
   const { children, onRemove } = props;
 
   return (
-    <div className="relative h-[100px] w-[100px] flex items-center justify-center border-1 border-solid border-gray-300 rounded-md">
+    <div className="relative flex h-[100px] w-[100px] items-center justify-center rounded-md border-1 border-solid border-gray-300">
       {children}
 
       <button
-        className="absolute top-0.5 right-0.5 flex items-center justify-center bg-white w-4 h-5 rounded-xs text-red-600 cursor-pointer"
+        className="absolute top-0.5 right-0.5 flex h-5 w-4 cursor-pointer items-center justify-center rounded-xs bg-white text-red-600"
         onClick={onRemove}
       >
         x

@@ -25,7 +25,7 @@ function ImageUpload(props: ImageUploadProps) {
 
   return (
     <div
-      className={`relative w-[100px] h-[100px] border-2 border-dashed border-gray-300 rounded-md flex items-center justify-center text-gray-500 cursor-pointer hover:bg-gray-50`}
+      className={`relative flex h-[100px] w-[100px] cursor-pointer items-center justify-center rounded-md border-2 border-dashed border-gray-300 text-gray-500 hover:bg-gray-50`}
     >
       <span className="absolute inset-0 flex items-center justify-center text-gray-500">
         Add Photo
@@ -35,7 +35,7 @@ function ImageUpload(props: ImageUploadProps) {
         id={id}
         type="file"
         accept="image/*"
-        className="absolute inset-0 opacity-0 cursor-pointer"
+        className="absolute inset-0 cursor-pointer opacity-0"
         onChange={handleChange}
       />
     </div>

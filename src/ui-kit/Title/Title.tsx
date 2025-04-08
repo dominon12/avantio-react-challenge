@@ -11,7 +11,7 @@ type TitleProps = {
 function Title(props: TitleProps) {
   const { children } = props;
 
-  return <h1 className="text-4xl font-bold text-gray-800 mb-4">{children}</h1>;
+  return <h1 className="mb-4 text-4xl font-bold text-gray-800">{children}</h1>;
 }
 
 export default Title;

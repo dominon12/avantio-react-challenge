@@ -10,7 +10,7 @@ type LayoutProps = {
 function Layout(props: LayoutProps) {
   const { children } = props;
 
-  return <main className="mx-auto max-w-sm p-6 h-dvh">{children}</main>;
+  return <main className="mx-auto h-dvh max-w-sm p-6">{children}</main>;
 }
 
 export default Layout;

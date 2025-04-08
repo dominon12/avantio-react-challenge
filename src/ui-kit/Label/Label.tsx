@@ -14,7 +14,7 @@ function Label(props: LabelProps) {
 
   return (
     <label
-      className="text-sm font-medium text-gray-700 cursor-pointer"
+      className="cursor-pointer text-sm font-medium text-gray-700"
       {...labelProps}
     >
       {children}

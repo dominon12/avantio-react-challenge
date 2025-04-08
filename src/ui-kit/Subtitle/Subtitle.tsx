@@ -10,7 +10,7 @@ type SubtitleProps = {
 function Subtitle(props: SubtitleProps) {
   const { children } = props;
 
-  return <h1 className="text-2xl font-bold text-gray-600 mb-3">{children}</h1>;
+  return <h1 className="mb-3 text-2xl font-bold text-gray-600">{children}</h1>;
 }
 
 export default Subtitle;

@@ -27,10 +27,10 @@ function Form(props: FormProps) {
   } = props;
 
   return (
-    <section className="flex flex-col h-full">
+    <section className="flex h-full flex-col">
       <Title>{title}</Title>
-      <form ref={ref} onSubmit={onSubmit} className="flex flex-col grow">
-        <div className="grow mb-8 flex flex-col gap-3">{children}</div>
+      <form ref={ref} onSubmit={onSubmit} className="flex grow flex-col">
+        <div className="mb-8 flex grow flex-col gap-3">{children}</div>
         <Button type="submit" disabled={!canSubmit}>
           {submitText}
         </Button>

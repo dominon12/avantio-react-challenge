@@ -10,7 +10,7 @@ type FieldErrorProps = {
 function FieldError(props: FieldErrorProps) {
   const { children } = props;
 
-  return <span className="text-red-400 text-xs">{children}</span>;
+  return <span className="text-xs text-red-400">{children}</span>;
 }
 
 export default FieldError;

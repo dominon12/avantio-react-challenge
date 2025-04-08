@@ -26,7 +26,7 @@ function Feedback(props: FeedbackProps) {
 
   return (
     <section
-      className={`flex flex-col h-full items-center justify-center text-center p-4 bg-${color}-50 text-${color}-700`}
+      className={`flex h-full flex-col items-center justify-center p-4 text-center bg-${color}-50 text-${color}-700`}
     >
       <Title>{title}</Title>
       <p className={`mt-1 text-sm text-${color}-800`}>{message}</p>

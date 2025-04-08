@@ -11,6 +11,7 @@ type FormStepProps = {
   submitText?: string;
   canSubmit?: boolean;
   onSubmit: FormEventHandler<HTMLFormElement>;
+  onBack?: () => void;
 };
 
 /**
@@ -24,6 +25,7 @@ function FormStep(props: FormStepProps) {
     submitText = "Submit",
     canSubmit = true,
     onSubmit,
+    onBack,
   } = props;
 
   return (
@@ -31,9 +33,17 @@ function FormStep(props: FormStepProps) {
       <Title>{title}</Title>
       <form ref={ref} onSubmit={onSubmit} className="flex grow flex-col">
         <div className="mb-8 flex grow flex-col gap-3">{children}</div>
-        <Button type="submit" disabled={!canSubmit}>
-          {submitText}
-        </Button>
+
+        <div className="flex gap-2">
+          {onBack && (
+            <Button className="grow" type="button" onClick={onBack}>
+              Back
+            </Button>
+          )}
+          <Button className="grow" type="submit" disabled={!canSubmit}>
+            {submitText}
+          </Button>
+        </div>
       </form>
     </section>
   );

@@ -17,10 +17,9 @@ type ActionPayloadMap = {
 // create `Action` type
 // from the map above
 type Action<K extends keyof ActionPayloadMap = keyof ActionPayloadMap> = {
-  [T in K]: {
-    type: T;
-    payload: ActionPayloadMap[T];
-  };
+  [T in K]: ActionPayloadMap[T] extends void
+    ? { type: T }
+    : { type: T; payload: ActionPayloadMap[T] };
 }[K];
 
 export default Action;

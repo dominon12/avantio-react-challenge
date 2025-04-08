@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Accommodation form reducer > returns the initial state for an unknown action type 1`] = `
+{
+  "step": "accommodation",
+}
+`;
+
+exports[`Accommodation form reducer > stores accommodation and goes to the \`Owner\` step 1`] = `
+{
+  "accommodation": {
+    "address": "123 Test St",
+    "name": "Test Accommodation",
+    "type": "house",
+  },
+  "step": "owner",
+}
+`;
+
+exports[`Accommodation form reducer > stores owner and goes to the \`Summary\` step 1`] = `
+{
+  "owner": {
+    "email": "test@email.com",
+    "name": "Test Owner",
+  },
+  "step": "summary",
+}
+`;
+
+exports[`Accommodation form reducer > stores result and goes to the \`Confirmation\` step 1`] = `
+{
+  "result": "success",
+  "step": "confirmation",
+}
+`;

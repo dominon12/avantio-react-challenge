@@ -20,11 +20,6 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
@@ -37,6 +32,11 @@ export default defineConfig([
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       "react/react-in-jsx-scope": "off",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
   },
   eslintConfigPrettier,

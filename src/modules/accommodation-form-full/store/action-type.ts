@@ -4,6 +4,7 @@ enum ActionType {
   FormSummaryAccepted = "FormSummaryAccepted",
   BackToAccommodation = "BackToAccommodation",
   BackToOwner = "BackToOwner",
+  BackToSummary = "BackToSummary",
   ResetForm = "ResetForm",
 }
 

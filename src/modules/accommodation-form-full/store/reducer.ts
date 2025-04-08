@@ -35,6 +35,11 @@ function reducer(state: StoreState, action: Action): StoreState {
         ...state,
         step: FormStep.Owner,
       };
+    case ActionType.BackToSummary:
+      return {
+        ...state,
+        step: FormStep.Summary,
+      };
     case ActionType.ResetForm:
       return initialState;
     default:

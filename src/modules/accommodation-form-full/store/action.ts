@@ -14,6 +14,7 @@ type ActionPayloadMap = {
   };
   [ActionType.BackToAccommodation]: Partial<Owner>;
   [ActionType.BackToOwner]: void;
+  [ActionType.BackToSummary]: void;
   [ActionType.ResetForm]: void;
 };
 

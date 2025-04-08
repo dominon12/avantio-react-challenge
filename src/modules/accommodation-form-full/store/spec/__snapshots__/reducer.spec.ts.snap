@@ -16,6 +16,12 @@ exports[`Accommodation form reducer > goes back to the \`Owner\` step 1`] = `
 }
 `;
 
+exports[`Accommodation form reducer > goes back to the \`Summary\` step 1`] = `
+{
+  "step": "summary",
+}
+`;
+
 exports[`Accommodation form reducer > resets the state correctly 1`] = `
 {
   "step": "accommodation",

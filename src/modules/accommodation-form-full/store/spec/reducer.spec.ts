@@ -137,6 +137,27 @@ describe("Accommodation form reducer", () => {
     expect(result).toMatchSnapshot();
   });
 
+  it("goes back to the `Summary` step", () => {
+    // prepare action
+    const action: Action = {
+      type: ActionType.BackToSummary,
+    };
+
+    // call reducer
+    const result = reducer(initialState, action);
+
+    // check result
+    expect(result.step).toBe(FormStep.Summary);
+
+    // expect other state properties to be unchanged
+    expect(result.accommodation).toBeUndefined();
+    expect(result.owner).toBeUndefined();
+    expect(result.result).toBeUndefined();
+
+    // match snapshot
+    expect(result).toMatchSnapshot();
+  });
+
   it("resets the state correctly", () => {
     // initialize with some data
     const initialStateWithData = {

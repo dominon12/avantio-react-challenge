@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Form - Web Component</title>
+    <!-- NOTE:: Add your script here -->
+    <script type="module" crossorigin src="/assets/index-D-jHrVW4.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-TZrNw7dA.css">
+  </head>
+  <body>
+    <script>
+      /* NOTE:: You can modify this script if you need to */
+      const form = document.createElement("accommodation-creation-form");
+      form.addEventListener("accommodation-form-submit", (data) =>
+        console.log("Data from accommodation creation form", data),
+      );
+
+      document.body.appendChild(form);
+    </script>
+  </body>
+</html>

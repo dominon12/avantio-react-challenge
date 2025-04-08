@@ -2,7 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 
-import Form from "src/ui-kit/Form";
+import FormStep from "src/ui-kit/FormStep";
 import ownerSchema from "../../schema/owner";
 import type Owner from "../../types/owner";
 import NameInput from "../NameInput";
@@ -30,7 +30,7 @@ function OwnerForm() {
   return (
     <FormProvider {...form}>
       <WithAnimatedAppearance>
-        <Form
+        <FormStep
           title="Owner"
           submitText="Next"
           canSubmit={form.formState.isValid}
@@ -39,7 +39,7 @@ function OwnerForm() {
           <NameInput />
           <EmailInput />
           <PhoneInput />
-        </Form>
+        </FormStep>
       </WithAnimatedAppearance>
     </FormProvider>
   );

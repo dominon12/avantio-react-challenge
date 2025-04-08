@@ -3,7 +3,7 @@ import type { FormEventHandler, ReactNode, Ref } from "react";
 import Title from "../Title";
 import Button from "../Button";
 
-type FormProps = {
+type FormStepProps = {
   // new way to pass refs since React 19
   ref?: Ref<HTMLFormElement>;
   title: string;
@@ -16,7 +16,7 @@ type FormProps = {
 /**
  * Renders a form.
  */
-function Form(props: FormProps) {
+function FormStep(props: FormStepProps) {
   const {
     ref,
     title,
@@ -39,4 +39,4 @@ function Form(props: FormProps) {
   );
 }
 
-export default Form;
+export default FormStep;

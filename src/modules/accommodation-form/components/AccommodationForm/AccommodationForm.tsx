@@ -2,7 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 
-import Form from "src/ui-kit/Form";
+import FormStep from "src/ui-kit/FormStep";
 import NameInput from "../NameInput";
 import AddressInput from "../AddressInput";
 import DescriptionTextArea from "../DescriptionTextArea";
@@ -33,7 +33,7 @@ function AccommodationForm() {
   return (
     <FormProvider {...form}>
       <WithAnimatedAppearance>
-        <Form
+        <FormStep
           title="Accommodation"
           submitText="Next"
           canSubmit={form.formState.isValid}
@@ -44,7 +44,7 @@ function AccommodationForm() {
           <DescriptionTextArea />
           <AccommodationTypeSelect />
           <ImageUploader />
-        </Form>
+        </FormStep>
       </WithAnimatedAppearance>
     </FormProvider>
   );

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import type { FormEventHandler } from "react";
 
 import useAccommodationFormContext from "src/modules/accommodation-form-full/context/selector";
-import Form from "src/ui-kit/Form";
+import FormStep from "src/ui-kit/FormStep";
 import AccommodationData from "../AccommodationData";
 import OwnerData from "../OwnerData";
 import ActionType from "src/modules/accommodation-form-full/store/action-type";
@@ -46,13 +46,13 @@ function FormSummary() {
 
   return (
     <WithAnimatedAppearance>
-      <Form ref={formRef} title="Summary" onSubmit={onSubmit}>
+      <FormStep ref={formRef} title="Summary" onSubmit={onSubmit}>
         {state.accommodation && (
           <AccommodationData accommodation={state.accommodation} />
         )}
 
         {state.owner && <OwnerData owner={state.owner} />}
-      </Form>
+      </FormStep>
     </WithAnimatedAppearance>
   );
 }
